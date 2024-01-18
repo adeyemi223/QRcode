@@ -7,6 +7,10 @@ document.getElementById("qrButton").onclick = function() {
         qrimage.src ="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" +
         qrText.value;
         imgBox.classList.add("show_img");
+         // Show the download link
+         let downloadLink = document.getElementById("downloadLink");
+         downloadLink.href = qrimage.src;
+         downloadLink.style.display = 'inline-block';
     } else{
         qrText.classList.add('error');
         setTimeout(()=>{
